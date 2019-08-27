@@ -16,8 +16,8 @@ export default class NotepadComponent extends React.Component<IProps, IState> {
     render() {
         return (
             <div>
-            <AddTodoComponent/>;
-        <ListComponent/>;
+
+
     </div>
         );
     }

@@ -37,12 +37,11 @@ class App extends React.Component<IProps, IState>{
             <div className="row">
               <div className="col-lg-9">
                    <div className="container-fluid w-75 notepadContainer">
-                     <AddTodoComponent/>
                      <ListComponent/>
                  </div>
                 </div>
               <div className="col-lg-3">
-                <FilterComponent/>
+              <FilterComponent/>
               </div>
             </div>
           </div>

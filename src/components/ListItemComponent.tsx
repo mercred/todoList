@@ -13,7 +13,7 @@ export default class ListItemComponent extends React.Component {
                     </div>
                 </div>
                 <input type="text" className="form-control todoTextInput" aria-label="Text input with checkbox"
-                       value="Jump from the bridge" ></input>
+                       defaultValue="Jump from the bridge" ></input>
                 <div className="input-group-append">
                     <button type="button" className="btn btn-danger">Delete</button>
                 </div>
