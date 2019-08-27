@@ -1,33 +1,50 @@
-.App {
-  text-align: center;
+#headerDiv {
+  height:10vh;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+#headerCol{
+  text-align:center;
+  background-color: aquamarine;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#headerH2{
+  font-size: 10vh
+}
+.row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+/*Font TODO list*/
+h2 {
+  font: 100 100px/1 'Oleo Script', Helvetica, sans-serif;
+
+  color: #2b2b2b;
+  text-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+}
+h4 {
+  font: 400 100px/1.3 'Berkshire Swash', Helvetica, sans-serif;
+  color: #2b2b2b;
+  text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
+}
+body {
+  background: url("img/wall3.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
 
-.App-link {
-  color: #61dafb;
+/*__________________________________Filter styling____________________________________*/
+#radioBtn .notActive{
+  color: #3276b1;
+  background-color: #fff;
+}
+.my_checkbox {
+  width:5vw;
+  height:4vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.notepadContainer{
+  background-color:rgb(212,208,205);
+  padding: 25px 50px 50px 25px;
+}
+.todoTextInput{
+  height:8vh; font-size: 5vh
 }
