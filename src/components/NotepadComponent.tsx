@@ -10,6 +10,7 @@ interface IProps {
     todosNotepad:Array<object>;
 
 }
+//TODO:REMOVE CLASS LATER
 export default class NotepadComponent extends React.Component<IProps, IState> {
 
     render() {

@@ -3,7 +3,7 @@
 }
 #headerCol{
   text-align:center;
-  background-color: aquamarine;
+ 
 }
 #headerH2{
   font-size: 10vh
@@ -47,4 +47,9 @@ body {
 }
 .todoTextInput{
   height:8vh; font-size: 5vh
+}
+ul{
+  list-style-type: none;
+  padding: 0;
+  margin:0;
 }

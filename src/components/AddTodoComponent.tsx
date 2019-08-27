@@ -1,13 +1,18 @@
  import React from 'react'
- import "../CSS/NewTodo.css"
+ import "../App.css"
 
 export default class AddTodoComponent extends React.Component {
     render() {
         return (
-            <form>
-                <input type="text" placeholder="New Todo Text" />
-                <button className="btn">Create new</button>
-        </form>
+            <div className="row">
+                <div className="input-group mb-3 input-group-lg">
+                    <input type="text" className="form-control" placeholder="Enter new ToDo"></input>
+                    <div className="input-group-append">
+                        <button type="button" className="btn btn-success">+</button>
+                    </div>
+                </div>
+
+            </div>
     );
     }
 }
