@@ -31,11 +31,11 @@ export default class FilterComponent extends React.Component<IProps,IState> {
     render() {
         return (
 
-                <div id="radioBtn" className="btn-group-vertical btn-group-lg" onClick={this.handleOnClick}>
-                    <a className="btn btn-primary active" id='0'>All</a>
-                    <a className="btn btn-primary notActive" id='1'>Completed</a>
-                    <a className="btn btn-primary notActive" id='2'>In-Progress</a>
-                </div>
+            <div id="radioBtn" className="btn-group-vertical btn-group-lg" onClick={this.handleOnClick}>
+                <a className="btn btn-primary active" id='0'>All</a>
+                <a className="btn btn-primary notActive" id='1'>Completed</a>
+                <a className="btn btn-primary notActive" id='2'>In-Progress</a>
+            </div>
 
         );
     }

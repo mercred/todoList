@@ -38,60 +38,49 @@ export default class ListComponent extends React.Component<IProps,IState> {
 
         })
         this.setState({
-           todos:todosTemp
+            todos:todosTemp
         })
     }
-        /*
-        const elementToUpdate = this.state.todos.find(elem=> elem.id === todo.id
-        );
-        if(elementToUpdate){
-            elementToUpdate.toggled=todo.toggled;
-            elementToUpdate.text=todo.text;
-        }*/
+
 
     deleteTodo= (id:number)=>{
         this.setState({
-            todos:this.state.todos.filter(todo=>todo.id!==id)
-        }
-
+                todos:this.state.todos.filter(todo=>todo.id!==id)
+            }
         );
-
     }
 
 
     render() {
         {
-        console.log("Current filter is",this.props.currentFilter)
-        if(this.props.currentFilter==0){
-            console.log("Got inside of switch 0")
-            this.state.todosFiltered=this.state.todos;
 
-        }else if(this.props.currentFilter==1){
-            console.log("Got inside of switch 1");
-            this.state.todosFiltered=this.state.todos.filter(todo=>todo.toggled);
-        } else{
-            console.log("Got inside of switch 2");
-            this.state.todosFiltered=this.state.todos.filter(todo=>!todo.toggled);
-        }
+            if(this.props.currentFilter==0){
+
+                this.state.todosFiltered=this.state.todos;
+
+            }else if(this.props.currentFilter==1){
+
+                this.state.todosFiltered=this.state.todos.filter(todo=>todo.toggled);
+            } else{
+
+                this.state.todosFiltered=this.state.todos.filter(todo=>!todo.toggled);
+            }
         }
 
-        // @ts-ignore
+
         return (
+            <div>
+                <AddTodoComponent onSubmit={this.addTodo}/>
+
                 <div>
-                    <AddTodoComponent onSubmit={this.addTodo}/>
+                    <ul>
+                        {this.state.todosFiltered.map(todo=>(
+                            <li key={todo.id.toString()}><ListItemComponent id={todo.id} text={todo.text} toggled={todo.toggled} updateTodo={this.updateTodo} deleteTodo={this.deleteTodo}/></li>
+                        ))}
 
-                    {JSON.stringify(this.state.todos)}
-
-                    <div>
-                        <ul>
-                            {console.log("Rendering new filtered list:",this.state.todosFiltered)}
-                            {this.state.todosFiltered.map(todo=>(
-                                <li key={todo.id.toString()}><ListItemComponent id={todo.id} text={todo.text} toggled={todo.toggled} updateTodo={this.updateTodo} deleteTodo={this.deleteTodo}/></li>
-                            ))}
-
-                        </ul>
-                        </div>
+                    </ul>
                 </div>
+            </div>
         );
     }
 }

@@ -51,7 +51,7 @@ export default class ListItemComponent extends React.Component<IProps,IState> {
                                className="my_checkbox" checked={this.state.toggled} onChange={this.handleToggleUpdate}></input>
                     </div>
                 </div>
-                <input type="text" className="form-control todoTextInput" aria-label="Text input with checkbox"
+                <input type="text" className={this.state.toggled ? "form-control todoTextInput todoTextCrossed" :"form-control todoTextInput"} aria-label="Text input with checkbox"
                        value={this.state.text} id={String(this.props.id)} onChange={this.handleTextUpdate}></input>
                 <div className="input-group-append">
                     <button type="button" className="btn btn-danger" onClick={this.handleDelete}>Delete</button>
