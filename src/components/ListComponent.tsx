@@ -62,11 +62,11 @@ export default class ListComponent extends React.Component<IProps,IState> {
     render() {
         {
         console.log("Current filter is",this.props.currentFilter)
-        if(this.props.currentFilter===0){
+        if(this.props.currentFilter==0){
             console.log("Got inside of switch 0")
             this.state.todosFiltered=this.state.todos;
 
-        }else if(this.props.currentFilter===1){
+        }else if(this.props.currentFilter==1){
             console.log("Got inside of switch 1");
             this.state.todosFiltered=this.state.todos.filter(todo=>todo.toggled);
         } else{
