@@ -5,7 +5,7 @@
      text: string
  }
  interface IProps {
-     onSubmit: (todo:object)=>void
+     onSubmit: (todo:{toggled:boolean,text:string,id:number})=>void
  }
 
 export default class AddTodoComponent extends React.Component<IProps,IState> {
@@ -20,11 +20,11 @@ export default class AddTodoComponent extends React.Component<IProps,IState> {
         event.preventDefault()//prevents default form handling
         this.setState({text:""})
         const todoText=this.state.text;
-        const id='id_'+String(new Date().getTime())
+        const id=new Date().getTime()
         this.props.onSubmit({
             toggled:false,
-            todoText:todoText,
-            todoId:id})
+            text:todoText,
+            id:id})
 
     }
     render() {

@@ -1,7 +1,7 @@
 import React from 'react'
 import "../App.css"
 
-export default class FilterComponent extends React.Component {
+export default class HeaderComponent extends React.Component {
     render() {
         return (
             <div className="row" id="headerDiv">

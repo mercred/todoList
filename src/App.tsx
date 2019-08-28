@@ -5,31 +5,26 @@ import HeaderComponent from "./components/HeaderComponent";
 import AddTodoComponent from "./components/AddTodoComponent";
 import ListComponent from "./components/ListComponent";
 interface IState {
-  nextId?: number;
-  todos:Array<object>;
+    //0 is show all, 1 is show completed,2 is show in progress
+  filterStateCode: number;
 }
 
 interface IProps {}
-
-
-
-
 class App extends React.Component<IProps, IState>{
   constructor(props:any){
     super(props);
 
     this.state={
-      todos:[
-        {id:0, todoText:"Cook breakfast", completed: true },
-        {id:1, todoText:"Study",completed: true},
-        {id:2, todoText:"Cook lunch",completed: false},
-        {id:3, todoText:"Work",completed: false},
-        {id:4, todoText:"Cook Dinner",completed: false},
-
-      ],
-      nextId:5
+      filterStateCode:0
     }
   }
+    filterTodo= async(filterStateParam:number)=>{
+        await this.setState({
+            filterStateCode:filterStateParam
+            }
+        );
+
+    }
   render(){
     return (
         <div className="container-fluid">
@@ -37,11 +32,11 @@ class App extends React.Component<IProps, IState>{
             <div className="row">
               <div className="col-lg-9">
                    <div className="container-fluid w-75 notepadContainer">
-                     <ListComponent/>
+                     <ListComponent currentFilter={this.state.filterStateCode} />
                  </div>
                 </div>
               <div className="col-lg-3">
-              <FilterComponent/>
+              <FilterComponent filterTodo={this.filterTodo}/>
               </div>
             </div>
           </div>
