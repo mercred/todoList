@@ -21,7 +21,7 @@ export default class ListComponent extends React.Component<IProps,IState> {
         currentFilterState:this.props.currentFilter
     }
     addTodo= (todo: {toggled:boolean,text:string,id:number})=>{
-        this.setState({todos:[todo,...this.state.todos]});
+        todo.text!=""&&this.setState({todos:[todo,...this.state.todos]});
 
     }
     updateTodo= (todo: {toggled:boolean,text:string,id:number})=>{
